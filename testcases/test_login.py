@@ -12,19 +12,6 @@ from page.index_page import IndexPafe
 from common.handlelog import log
 
 
-@pytest.fixture(scope="class")
-def login_fixcure():
-    log.info("开始执行登录的用例")
-    driver = webdriver.Chrome()
-    driver.maximize_window()
-    login_page = LoginPage(driver)
-    login_page.click_re_mobile()
-    index_page = IndexPafe(driver)
-    yield login_page, index_page
-    driver.quit()
-    log.info("登录用例执行完毕")
-
-
 class TestLogin:
 
     @pytest.mark.parametrize("case", LoginCase.success_case_data)

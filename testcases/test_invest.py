@@ -28,28 +28,6 @@ from data.case_data import InvestCase
 from decimal import Decimal
 
 
-@pytest.fixture(scope="class")
-def invest_fixcure():
-    log.info("开始执行投标的用例")
-    driver = webdriver.Chrome()
-    driver.maximize_window()
-    #   获取登录页面
-    login_page = LoginPage(driver)
-    #   登录
-    login_page.login(user=config.get("test_data", "user"), pwd=config.get("test_data", "pwd"))
-    #   获取首页
-    index_page = IndexPafe(driver)
-    #   点击抢投标
-    index_page.click_toubiao()
-    #   获取投标页面
-    invest_page = InvestPage(driver)
-    #   获取用户页面
-    user_page = UserPage(driver)
-    yield invest_page, user_page
-    driver.quit()
-    log.info("投标用例执行完毕")
-
-
 class TestInvest:
 
     @pytest.mark.parametrize('case', InvestCase.error_ele_case_data)
