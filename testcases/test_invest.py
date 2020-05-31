@@ -17,13 +17,7 @@ Time：2020/5/24    3:16
 """
 
 import pytest
-from selenium import webdriver
-from page.index_page import IndexPafe
-from page.login_page import LoginPage
-from page.invest_page import InvestPage
-from page.user_page import UserPage
 from common.handlelog import log
-from common.handleconfig import config
 from data.case_data import InvestCase
 from decimal import Decimal
 

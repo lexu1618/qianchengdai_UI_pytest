@@ -52,7 +52,7 @@ def login_fixcure():
 
 
 def get_option():
-    if config.get("env", "headless"):
+    if config.get("env", "headless") == "True":
         """设置浏览启动的选项：无头模式"""
         opt = webdriver.ChromeOptions()
         opt.add_argument("--headless")

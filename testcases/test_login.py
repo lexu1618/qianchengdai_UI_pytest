@@ -5,12 +5,8 @@ Time：2020/5/15    21:22
 ====================================
 """
 import pytest
-from selenium import webdriver
 from data.case_data import LoginCase
-from page.login_page import LoginPage
-from page.index_page import IndexPafe
 from common.handlelog import log
-
 
 class TestLogin:
 
